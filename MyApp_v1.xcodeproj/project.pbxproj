@@ -14,6 +14,10 @@
 		194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2328438552003C47DE /* MyProjectMainView.swift */; };
 		194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE252843856B003C47DE /* HobbyMainView.swift */; };
 		194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */; };
+		19DB35B5284E7A3000236177 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 19DB35B4284E7A3000236177 /* RiveRuntime */; };
+		19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B6284E842600236177 /* ExtensionApp.swift */; };
+		19DB35BA284E938900236177 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B9284E938900236177 /* PersonModel.swift */; };
+		19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF540E2858F2820031517D /* CardBackgroundView.swift */; };
 		19EC74B1282AC1C300E18E46 /* MyApp_v1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC74B0282AC1C300E18E46 /* MyApp_v1App.swift */; };
 		19EC74B3282AC1C300E18E46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC74B2282AC1C300E18E46 /* ContentView.swift */; };
 		19EC74B5282AC1C400E18E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19EC74B4282AC1C400E18E46 /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 		194AEE2328438552003C47DE /* MyProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectMainView.swift; sourceTree = "<group>"; };
 		194AEE252843856B003C47DE /* HobbyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyMainView.swift; sourceTree = "<group>"; };
 		194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVisitedMainView.swift; sourceTree = "<group>"; };
+		19DB35B6284E842600236177 /* ExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionApp.swift; sourceTree = "<group>"; };
+		19DB35B9284E938900236177 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		19DF540E2858F2820031517D /* CardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackgroundView.swift; sourceTree = "<group>"; };
+		19DF5411285904F50031517D /* hamburger_menu.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = hamburger_menu.riv; sourceTree = "<group>"; };
 		19EC74AD282AC1C300E18E46 /* MyApp_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EC74B0282AC1C300E18E46 /* MyApp_v1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp_v1App.swift; sourceTree = "<group>"; };
 		19EC74B2282AC1C300E18E46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19DB35B5284E7A3000236177 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +129,8 @@
 		191CB100283E8D5A00D6A188 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				19DF540D2858F1C40031517D /* OtherView */,
+				19DB35B8284E937400236177 /* Model */,
 				194AEE17284383BE003C47DE /* AboutMe */,
 				194AEE18284383CC003C47DE /* Education */,
 				194AEE19284383D6003C47DE /* Career */,
@@ -182,6 +193,30 @@
 			path = PlacesVisited;
 			sourceTree = "<group>";
 		};
+		19DB35B8284E937400236177 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19DB35B9284E938900236177 /* PersonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19DF540D2858F1C40031517D /* OtherView */ = {
+			isa = PBXGroup;
+			children = (
+				19DF540E2858F2820031517D /* CardBackgroundView.swift */,
+			);
+			path = OtherView;
+			sourceTree = "<group>";
+		};
+		19DF5410285904160031517D /* RiveAssets */ = {
+			isa = PBXGroup;
+			children = (
+				19DF5411285904F50031517D /* hamburger_menu.riv */,
+			);
+			path = RiveAssets;
+			sourceTree = "<group>";
+		};
 		19EC74A4282AC1C300E18E46 = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +245,9 @@
 				191CB0FF283E8D5100D6A188 /* ViewModel */,
 				191CB0FE283E8D4C00D6A188 /* Model */,
 				19EC74B4282AC1C400E18E46 /* Assets.xcassets */,
+				19DF5410285904160031517D /* RiveAssets */,
 				19EC74B6282AC1C400E18E46 /* Preview Content */,
+				19DB35B6284E842600236177 /* ExtensionApp.swift */,
 			);
 			path = MyApp_v1;
 			sourceTree = "<group>";
@@ -256,6 +293,9 @@
 			dependencies = (
 			);
 			name = MyApp_v1;
+			packageProductDependencies = (
+				19DB35B4284E7A3000236177 /* RiveRuntime */,
+			);
 			productName = MyApp_v1;
 			productReference = 19EC74AD282AC1C300E18E46 /* MyApp_v1.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +368,9 @@
 				Base,
 			);
 			mainGroup = 19EC74A4282AC1C300E18E46;
+			packageReferences = (
+				19DB35B3284E7A3000236177 /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = 19EC74AE282AC1C300E18E46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,12 +418,15 @@
 				194AEE222843853C003C47DE /* CareerMainView.swift in Sources */,
 				19EC74DF282C3AEF00E18E46 /* MenuView.swift in Sources */,
 				19EC74B3282AC1C300E18E46 /* ContentView.swift in Sources */,
+				19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */,
 				191CB102283E8ECA00D6A188 /* SwitchView.swift in Sources */,
 				194AEE202843845C003C47DE /* EducationMainView.swift in Sources */,
+				19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */,
 				19EC74B1282AC1C300E18E46 /* MyApp_v1App.swift in Sources */,
 				194AEE1E28438443003C47DE /* AboutMeMainView.swift in Sources */,
 				19EC74DB282AC20000E18E46 /* MenuBackGroundView.swift in Sources */,
 				194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */,
+				19DB35BA284E938900236177 /* PersonModel.swift in Sources */,
 				194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */,
 				19EC74DD282AC27E00E18E46 /* MenuContentView.swift in Sources */,
 			);
@@ -707,6 +753,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		19DB35B3284E7A3000236177 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19DB35B4284E7A3000236177 /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19DB35B3284E7A3000236177 /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 19EC74A5282AC1C300E18E46 /* Project object */;
 }

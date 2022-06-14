@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MenuContentView: View {
   
   @Binding var selectedTab: Tab
@@ -37,7 +38,7 @@ struct MenuContentView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .foregroundColor(.white)
-       
+        
         Spacer()
         
       }
@@ -48,48 +49,50 @@ struct MenuContentView: View {
       
       
       VStack(spacing: 25){
-          Button(action: { changeView(tab: .aboutme) }) {
-            Text("About me")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.2), value: triger)
-          }
-          Button(action: { changeView(tab: .education) }) {
-            Text("Education")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.3), value: triger)
-          }
-          Button(action: { changeView(tab: .career) }) {
-            Text("Career")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.4), value: triger)
-          }
-          Button(action: { changeView(tab: .myproject)  }) {
-            Text("My Project")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.5), value: triger)
-          }
-          Button(action: { changeView(tab: .hooby)  }) {
-            Text("Hobby")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.6), value: triger)
-          }
-          Button(action: { changeView(tab: .placesvisited) }) {
-            Text("Places visited")
-              .textMenuStyle(color: color)
-              .offset(x: triger ? 0 : -200)
-              .animation(.default.delay(0.7), value: triger)
-          }
-     
+        
+        Button(action: { changeView(tab: .aboutme) }) {
+          Cell(text: "About me", imageString: "person")
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.2), value: triger)
+
+        Button(action: { changeView(tab: .education) }) {
+          Cell(text: "Education", imageString: "book")
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.3), value: triger)
+
+
+        Button(action: { changeView(tab: .career) }) {
+          Cell(text: "Career", imageString: "terminal")
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.4), value: triger)
+
+
+        Button(action: { changeView(tab: .myproject)  }) {
+          Cell(text: "My Project", imageString: "text.viewfinder")
+        }
+        .offset(x: triger ? 0 : -200)
+          .animation(.default.delay(0.5), value: triger)
+
+
+        Button(action: { changeView(tab: .hooby)  }) {
+          Cell(text: "Hobby", imageString: "star")
+
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.6), value: triger)
+
+
+        Button(action: { changeView(tab: .placesvisited) }) {
+          Cell(text: "Places visited", imageString: "map")
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.7), value: triger)
+        
       }
       .padding(.top)
-//      .padding(.leading)
-      
-      
       
       Spacer()
     }
@@ -116,7 +119,29 @@ extension Text {
       .foregroundColor(color)
       .font(.title2)
       .bold()
-      .shadow(color: .white, radius: 1, x: 1, y: 1)
       .frame(maxWidth: .infinity,alignment: .leading)
   }
 }
+
+private struct Cell: View {
+  
+  @State var text: String
+  @State var imageString: String
+  var color: Color = .white
+  
+  var body: some View{
+    HStack {
+      Image(systemName: imageString)
+        .resizable().scaledToFit()
+      Text(text)
+        .textMenuStyle(color: color)
+    }
+    .frame(height: 30)
+    .foregroundColor(.white)
+    .AppShadow()
+  }
+  
+}
+
+
+
