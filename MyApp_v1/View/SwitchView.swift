@@ -15,7 +15,7 @@ struct SwitchView: View {
       VStack{
         switch selectedTab {
         case .aboutme:
-          AboutMeMainView()
+          AboutMeMainView(aboutMeMainVM: AboutMeMainViewModel.Mock())
         case .education:
           EducationMainView()
         case .career:
@@ -30,7 +30,7 @@ struct SwitchView: View {
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .padding(.top)
-      .background(  LinearGradient(colors: [.blue, .red], startPoint: .bottom, endPoint: .top))
+      .background( Color.blue.gradient)
       
  
     }

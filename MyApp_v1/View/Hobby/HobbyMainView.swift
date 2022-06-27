@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HobbyMainView: View {
     var body: some View {
+      VStack {
         Text("Hobby Main View")
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .AppBackground()
     }
 }
 

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MyProjectMainView: View {
     var body: some View {
+      VStack {
         Text("My Project Main View")
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .AppBackground()
     }
 }
 

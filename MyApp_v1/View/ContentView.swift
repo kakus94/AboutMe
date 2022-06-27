@@ -36,9 +36,15 @@ struct ContentView: View {
             .CardStyle(triger: self.triger, numberCard: 1, offsetX: self.offsetX)
           
           
-          SwitchView(selectedTab: $selectedTab)
-            .CardStyle(triger: self.triger, numberCard: 0, offsetX: self.offsetX)
-          
+          VStack {
+            Rectangle().opacity(0)
+              .frame(height: 70)
+            
+            SwitchView(selectedTab: $selectedTab)
+              .CardStyle(triger: self.triger, numberCard: 0, offsetX: self.offsetX)
+              .padding()            
+              
+          }
          
           
         }
@@ -63,7 +69,8 @@ struct ContentView: View {
             }
            
           }
-        }.ignoresSafeArea(.all, edges: .all)
+        }
+        .ignoresSafeArea(.all, edges: .all)
       }
       .animation(.default, value: triger)
     }
@@ -78,21 +85,8 @@ struct ContentView_Previews: PreviewProvider {
 
 extension View {
   func AppBackground() -> some View {
-    self.background(  LinearGradient(colors: [.blue, .red], startPoint: .bottom, endPoint: .top))
+    self.background(Color.blue.gradient)    
   }
 }
 
 
-extension View {
-  func CardStyle(triger: Bool, numberCard: Int, offsetX: CGFloat = 300, scaled: CGFloat = 0.8) -> some View {
-    self
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
-      .background(  LinearGradient(colors: [.blue, .red], startPoint: .bottom, endPoint: .top))
-      .cornerRadius(triger ? 30 : 0 )
-      .offset(x: triger ? offsetX - CGFloat((20 * numberCard)) : 0 , y: 0)
-      .scaleEffect(triger ? scaled : 1 )
-      .blur(radius: triger ? 1 : 0)
-      .shadow(color: .black.opacity(0.8), radius: 10, x: -10, y: 0)
-      .rotation3DEffect(.degrees(triger ? Double(-25 + ( 5 * numberCard)) : 0), axis: (x: 0, y: 1, z: -1))
-  }
-}

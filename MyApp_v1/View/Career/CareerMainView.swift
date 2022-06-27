@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CareerMainView: View {
     var body: some View {
+      VStack {
         Text("Career Main View")
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .AppBackground()
     }
 }
 

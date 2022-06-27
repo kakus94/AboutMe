@@ -14,6 +14,7 @@
 		194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2328438552003C47DE /* MyProjectMainView.swift */; };
 		194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE252843856B003C47DE /* HobbyMainView.swift */; };
 		194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */; };
+		19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A4995C286A45CE0027D4E8 /* TileEducationView.swift */; };
 		19DB35B5284E7A3000236177 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 19DB35B4284E7A3000236177 /* RiveRuntime */; };
 		19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B6284E842600236177 /* ExtensionApp.swift */; };
 		19DB35BA284E938900236177 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B9284E938900236177 /* PersonModel.swift */; };
@@ -56,10 +57,12 @@
 		194AEE2328438552003C47DE /* MyProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectMainView.swift; sourceTree = "<group>"; };
 		194AEE252843856B003C47DE /* HobbyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyMainView.swift; sourceTree = "<group>"; };
 		194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVisitedMainView.swift; sourceTree = "<group>"; };
+		19A4995C286A45CE0027D4E8 /* TileEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileEducationView.swift; sourceTree = "<group>"; };
 		19DB35B6284E842600236177 /* ExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionApp.swift; sourceTree = "<group>"; };
 		19DB35B9284E938900236177 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		19DF540E2858F2820031517D /* CardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackgroundView.swift; sourceTree = "<group>"; };
 		19DF5411285904F50031517D /* hamburger_menu.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = hamburger_menu.riv; sourceTree = "<group>"; };
+		19DF541328590FA80031517D /* animheartbeat.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = animheartbeat.riv; sourceTree = "<group>"; };
 		19EC74AD282AC1C300E18E46 /* MyApp_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EC74B0282AC1C300E18E46 /* MyApp_v1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp_v1App.swift; sourceTree = "<group>"; };
 		19EC74B2282AC1C300E18E46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				194AEE1F2843845C003C47DE /* EducationMainView.swift */,
+				19A4995C286A45CE0027D4E8 /* TileEducationView.swift */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -240,6 +244,7 @@
 		19EC74AF282AC1C300E18E46 /* MyApp_v1 */ = {
 			isa = PBXGroup;
 			children = (
+				19DF541328590FA80031517D /* animheartbeat.riv */,
 				19EC74B0282AC1C300E18E46 /* MyApp_v1App.swift */,
 				191CB100283E8D5A00D6A188 /* View */,
 				191CB0FF283E8D5100D6A188 /* ViewModel */,
@@ -415,6 +420,7 @@
 			files = (
 				194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */,
 				19EC74E1282C3D2800E18E46 /* TestView.swift in Sources */,
+				19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */,
 				194AEE222843853C003C47DE /* CareerMainView.swift in Sources */,
 				19EC74DF282C3AEF00E18E46 /* MenuView.swift in Sources */,
 				19EC74B3282AC1C300E18E46 /* ContentView.swift in Sources */,
@@ -595,6 +601,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +631,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

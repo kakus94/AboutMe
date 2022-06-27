@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MenuBackGroundView: View {
     var body: some View {
-      LinearGradient(colors: [.blue, .red], startPoint: .bottom, endPoint: .top)
+      VStack{
+        
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .background(Color.blue.gradient)
         .ignoresSafeArea(.all, edges: .all)
     }
 }

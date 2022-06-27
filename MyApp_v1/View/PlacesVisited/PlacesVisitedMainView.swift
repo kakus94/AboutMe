@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PlacesVisitedMainView: View {
     var body: some View {
+      VStack {
         Text("Places Visited Main View")
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .AppBackground()
     }
 }
 

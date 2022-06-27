@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct EducationMainView: View {
+  
+  
     var body: some View {
-        Text("Education View Main")
+      ScrollView() {
+        TileEducationView(trigger: .constant(false))
+        
+        TileEducationView(trigger: .constant(false))
+        
+        TileEducationView(trigger: .constant(false))
+        
+        TileEducationView(trigger: .constant(false))
+        
+        TileEducationView(trigger: .constant(false))
+      
+      }
+      .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .AppBackground()
+        
     }
 }
 

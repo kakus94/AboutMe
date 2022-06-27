@@ -6,12 +6,38 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 @main
 struct MyApp_v1App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//          riveTest()
         }
+    }
+}
+
+
+
+struct riveTest: View {
+  
+  //Rive
+//  let hamButton = RiveViewModel(fileName: "animheartbeat", autoPlay: true, animationName: "pulse")
+  
+  var body: some View {
+    VStack{
+//      hamButton.view()
+      
+    }
+  }
+  
+  
+}
+
+
+struct riveTest_Previews: PreviewProvider {
+    static var previews: some View {
+      riveTest()
     }
 }
