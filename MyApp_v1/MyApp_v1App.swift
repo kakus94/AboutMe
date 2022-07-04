@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RiveRuntime
 
 @main
 struct MyApp_v1App: App {

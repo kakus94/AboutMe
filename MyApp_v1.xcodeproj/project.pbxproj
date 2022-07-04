@@ -15,7 +15,6 @@
 		194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE252843856B003C47DE /* HobbyMainView.swift */; };
 		194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */; };
 		19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A4995C286A45CE0027D4E8 /* TileEducationView.swift */; };
-		19DB35B5284E7A3000236177 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 19DB35B4284E7A3000236177 /* RiveRuntime */; };
 		19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B6284E842600236177 /* ExtensionApp.swift */; };
 		19DB35BA284E938900236177 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB35B9284E938900236177 /* PersonModel.swift */; };
 		19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF540E2858F2820031517D /* CardBackgroundView.swift */; };
@@ -30,6 +29,8 @@
 		19EC74DD282AC27E00E18E46 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC74DC282AC27E00E18E46 /* MenuContentView.swift */; };
 		19EC74DF282C3AEF00E18E46 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC74DE282C3AEF00E18E46 /* MenuView.swift */; };
 		19EC74E1282C3D2800E18E46 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC74E0282C3D2800E18E46 /* TestView.swift */; };
+		19F0304B2872FB8600CC2A0C /* EducationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0304A2872FB8600CC2A0C /* EducationSheetView.swift */; };
+		19F0304D28731E8D00CC2A0C /* AddedEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0304C28731E8D00CC2A0C /* AddedEducationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		19EC74DC282AC27E00E18E46 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
 		19EC74DE282C3AEF00E18E46 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		19EC74E0282C3D2800E18E46 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		19F0304A2872FB8600CC2A0C /* EducationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationSheetView.swift; sourceTree = "<group>"; };
+		19F0304C28731E8D00CC2A0C /* AddedEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedEducationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19DB35B5284E7A3000236177 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +163,8 @@
 			children = (
 				194AEE1F2843845C003C47DE /* EducationMainView.swift */,
 				19A4995C286A45CE0027D4E8 /* TileEducationView.swift */,
+				19F0304A2872FB8600CC2A0C /* EducationSheetView.swift */,
+				19F0304C28731E8D00CC2A0C /* AddedEducationView.swift */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -299,7 +303,6 @@
 			);
 			name = MyApp_v1;
 			packageProductDependencies = (
-				19DB35B4284E7A3000236177 /* RiveRuntime */,
 			);
 			productName = MyApp_v1;
 			productReference = 19EC74AD282AC1C300E18E46 /* MyApp_v1.app */;
@@ -427,6 +430,7 @@
 				19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */,
 				191CB102283E8ECA00D6A188 /* SwitchView.swift in Sources */,
 				194AEE202843845C003C47DE /* EducationMainView.swift in Sources */,
+				19F0304B2872FB8600CC2A0C /* EducationSheetView.swift in Sources */,
 				19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */,
 				19EC74B1282AC1C300E18E46 /* MyApp_v1App.swift in Sources */,
 				194AEE1E28438443003C47DE /* AboutMeMainView.swift in Sources */,
@@ -435,6 +439,7 @@
 				19DB35BA284E938900236177 /* PersonModel.swift in Sources */,
 				194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */,
 				19EC74DD282AC27E00E18E46 /* MenuContentView.swift in Sources */,
+				19F0304D28731E8D00CC2A0C /* AddedEducationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,14 +777,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		19DB35B4284E7A3000236177 /* RiveRuntime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 19DB35B3284E7A3000236177 /* XCRemoteSwiftPackageReference "rive-ios" */;
-			productName = RiveRuntime;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 19EC74A5282AC1C300E18E46 /* Project object */;
 }

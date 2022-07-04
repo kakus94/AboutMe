@@ -7,82 +7,248 @@
 
 import SwiftUI
 
+struct Education: Identifiable {
+  var id = UUID().uuidString
+  var nameSchool: String
+  var location: String
+  var schooleGrade: String
+  var startDate: Int
+  var details: TileEducationDetails
+  
+  static func Mock() -> Self {
+    return Education(nameSchool: "Mock name",
+                     location: "Mock location",
+                     schooleGrade: "3.5",
+                     startDate: 2002,
+                     details: TileEducationDetails.Mock)
+  }
+  
+  static func Empty() -> Education {
+    Education(nameSchool: "",
+              location: "",
+              schooleGrade: "",
+              startDate: 0000,
+              details: TileEducationDetails(specialization: "",
+                                            extraClasses: "",
+                                            project: ""))
+  }
+}
+
 struct TileEducationView: View {
   
-  @Binding var trigger: Bool
+  @State var trigger: Bool = false
+  
+  @Binding var model: Education
+  
+  @Binding var editEnable: Bool
+  
+  @State var handler: () -> Void
+  @State var delateThisItem: () -> Void
+  
+  @State private var editButtonTap: Bool = false
+  @State private var deleteButtonTap: Bool = false
   
   var body: some View {
+    
     HStack(spacing: 0){
-      VStack(spacing: 0) {
-        
-        Rectangle()
-        .frame(width: 3)
-        
-        Text("2011")
-          .font(.headline.bold())
-          .frame(maxWidth: .infinity,alignment: .leading)
-          .padding(.leading)
-        
-          Rectangle()
-          .frame(width: 3)
-      }
-      .frame(width: 60)
+      TreeAndYearView
+        .frame(height: UIScreen.main.bounds.height / 7)
       
-      
-      HStack {
-        Image(systemName: "person")
-          .resizable()
-          .scaledToFit()
-        
-        VStack{
-          Group{
-            Text("Hello, World!")
-              .font(.body.bold())
-            
-            Text("Lokalizacja")
-              .font(.subheadline)
-            
-            Text("school grade")
-              .font(.caption)
-          }
-          .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .padding(.horizontal)
-        
-        Image(systemName: self.trigger ?  "arrow.turn.right.down" : "arrow.forward" )
-        
-      }
-      .frame(height: 50)
-      .FormStyle()
+      TileSubView
+        .FormStyle()
     }
-    .frame(height: 150)
+    .animation(.default, value: trigger)
+    .animation(.default, value: editEnable)
+    .sheet(isPresented: $editButtonTap) {
+      EducationSheetView(model: $model)
+    }
+    .confirmationDialog("Cos", isPresented: $deleteButtonTap, titleVisibility: Visibility.automatic) {
+      Button("Usuń", role: .destructive) {
+        delateThisItem()
+        
+      }
+    } message: {
+      Text("Czy napewno chcesz usunać ?")
+    }
+   
+  }
+  
+  var TileSubView: some View {
+    VStack {
+      Button(action: { trigger.toggle(); handler() }) {
+        HStack {
+          Image(systemName: "person")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.black)
+          
+          VStack{
+            Group{
+              Text(model.nameSchool)
+                .font(.body.bold())
+              
+              Text(model.location)
+                .font(.subheadline)
+              
+              Text("\(model.schooleGrade)")
+                .font(.caption)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundColor(.black)
+          }
+          .padding(.horizontal)
+          
+          Image(systemName: self.trigger ?  "arrow.turn.right.down" : "arrow.forward" )
+            .foregroundColor(.black)
+          
+        }
+        .frame(height: 50)
+      }
+      .padding()
+        
+      if trigger {
+        TilieEducationDetailsView(educationDetails: model.details)
+          .padding([.horizontal, .bottom])
+      }
+      
+      if editEnable {
+       
+        HStack(spacing: 0){
+          Button(action: editButton) {
+            Text("Edit")
+              .foregroundColor(.black)
+              .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+              .background(Color.green)
+          }
+          
+          Button(action: deleteButton) {
+            Text("Delete")
+              .foregroundColor(.black)
+              .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+              .background(Color.red)
+          }
+        }
+        .frame(height: 40)
+      }
+    }
+    
+  }
+  
+  var TreeAndYearView: some View {
+    VStack(spacing: 0) {
+      Text("\(model.startDate)")
+        .font(.headline.bold())
+        .frame(maxWidth: .infinity,alignment: .leading)
+        .padding(.leading)
+    }
+    .frame(width: 60)
+  }
+  
+  //Edit button
+  func editButton() {
+    self.editButtonTap = true
+  }
+  
+  //Edit button
+  func deleteButton() {
+    self.deleteButtonTap = true
+  }
+  
+}
+
+
+struct TileEducationDetails {
+  var specialization: String = ""
+  var extraClasses: String = ""
+  var project: String = ""
+  
+  static var Mock = TileEducationDetails(specialization: " spec spec spec", extraClasses: "extara extara", project: "project project project")
+}
+
+struct TilieEducationDetailsView: View {
+  
+  @State var educationDetails: TileEducationDetails
+  
+  var body: some View{
+    VStack {
+      Divider()
+      if !educationDetails.specialization.isEmpty {
+        Text("Specialization:")
+          .maxFrameLeading
+          .bold()
+        
+        Text(" \(educationDetails.specialization)")
+          .maxFrameLeading
+      }
+    
+      if !educationDetails.extraClasses.isEmpty {
+        Divider()
+        Text("Extra classes:")
+          .maxFrameLeading
+          .bold()
+        Text(" \(educationDetails.extraClasses)")
+          .maxFrameLeading
+      }
+      
+      if !educationDetails.project.isEmpty {
+        Divider()
+        Text("Completed project:")
+          .maxFrameLeading
+          .bold()
+        
+        Text(" \(educationDetails.project)")
+          .maxFrameLeading
+      }
+    
+     
+    }
+  }
+}
+
+extension Text {
+  var maxFrameLeading: some View {
+    self
+     
+      .frame(maxWidth: .infinity, alignment: .leading)
     
   }
 }
 
-struct TileEducationView_Previews: PreviewProvider {
-    static var previews: some View {
-      TileEducationView(trigger: .constant(false))
-        .AppBackground()
-        .previewLayout(.sizeThatFits)
-        .previewDisplayName("Tile false")
-      
-      TileEducationView(trigger: .constant(true))
-        .AppBackground()
-        .previewLayout(.sizeThatFits)
-        .previewDisplayName("Tile true")
-    }
-}
+
+
 
 
 extension View {
   func FormStyle() -> some View {
     self
-      .padding()
+//      .padding()
       .background(.white.opacity(0.3))
       .cornerRadius(10)
       .padding()
       .shadow(radius: 15,x: 5,y:5)
      
   }
+}
+
+
+
+
+struct TileEducationView_Previews: PreviewProvider {
+    static var previews: some View {
+      TileEducationView(trigger: false,
+                        model: .constant(Education.Mock()),
+                        editEnable: .constant(true),
+                        handler: {}, delateThisItem: {})
+        .AppBackground()
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Tile false")
+      
+      TileEducationView(trigger: true,
+                        model: .constant(Education.Mock()),
+                        editEnable: .constant(true),
+                        handler: {}, delateThisItem: {})
+        .AppBackground()
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Tile true")
+    }
 }

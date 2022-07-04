@@ -17,7 +17,7 @@ struct SwitchView: View {
         case .aboutme:
           AboutMeMainView(aboutMeMainVM: AboutMeMainViewModel.Mock())
         case .education:
-          EducationMainView()
+          EducationMainView(modelView: EducationMainViewModel.Mock(5))
         case .career:
           CareerMainView()
         case .myproject:
