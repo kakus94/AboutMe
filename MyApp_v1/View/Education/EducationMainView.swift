@@ -51,16 +51,9 @@ struct EducationMainView: View {
       VStack {
         
         if editEnable {
-          Button(action: { addedNew = true }) {
-            Text("Added +")
-              .foregroundColor(.black)
-              .frame(width: UIScreen.main.bounds.width  / 1.5, height: 50, alignment: .center)
-              .background(.green)
-              .cornerRadius(15)
-          }
-          .padding()
+          ButtonAddedSubView
         }
-            
+        
         ScrollView() {
           ForEach(modelView.educations.indices, id: \.self) { index in
             TileEducationView(model: $modelView.educations[index],
@@ -68,11 +61,9 @@ struct EducationMainView: View {
                               handler: { animate.toggle() },
                               delateThisItem: { modelView.delete(modelView.educations[index]) })
           }
-        
+          
         }
-      }
-   
-      
+      }      
    
       .animation(.default, value: animate)
       .animation(.default, value: editEnable)
@@ -94,6 +85,19 @@ struct EducationMainView: View {
       .AppBackground()
         
     }
+  
+  
+  //Layout
+  var ButtonAddedSubView: some View {
+    Button(action: { addedNew = true }) {
+      Text("Added +")
+        .foregroundColor(.black)
+        .frame(width: UIScreen.main.bounds.width  / 1.5, height: 50, alignment: .center)
+        .background(.green)
+        .cornerRadius(15)
+    }
+    .padding()
+  }
   
   //Logic
   func editButtonAction() {
