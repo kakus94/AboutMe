@@ -7,32 +7,7 @@
 
 import SwiftUI
 
-struct Education: Identifiable {
-  var id = UUID().uuidString
-  var nameSchool: String
-  var location: String
-  var schooleGrade: String
-  var startDate: Int
-  var details: TileEducationDetails
-  
-  static func Mock() -> Self {
-    return Education(nameSchool: "Mock name",
-                     location: "Mock location",
-                     schooleGrade: "3.5",
-                     startDate: 2002,
-                     details: TileEducationDetails.Mock)
-  }
-  
-  static func Empty() -> Education {
-    Education(nameSchool: "",
-              location: "",
-              schooleGrade: "",
-              startDate: 0000,
-              details: TileEducationDetails(specialization: "",
-                                            extraClasses: "",
-                                            project: ""))
-  }
-}
+
 
 struct TileEducationView: View {
   
@@ -224,7 +199,7 @@ extension View {
 //      .padding()
       .background(.white.opacity(0.3))
       .cornerRadius(10)
-      .padding()
+//      .padding()
       .shadow(radius: 15,x: 5,y:5)
      
   }

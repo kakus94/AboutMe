@@ -6,27 +6,53 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+    
+    
+    return true
+  }
+}
 
 @main
 struct MyApp_v1App: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-//          riveTest()
+  
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  
+  @StateObject var appManager: AppManager = AppManager()
+  
+  var body: some Scene {
+    WindowGroup {
+      
+//      NavigationStack {
+      if appManager.isLogin == false {
+         LoginView()
+            .environmentObject(appManager)
+        } else {
+          ContentView()
+            .environmentObject(appManager)
         }
+        
+//      }
+      
+      
+     
+      
     }
+  }
 }
 
 
 
 struct riveTest: View {
-  
-  //Rive
-//  let hamButton = RiveViewModel(fileName: "animheartbeat", autoPlay: true, animationName: "pulse")
+
   
   var body: some View {
     VStack{
-//      hamButton.view()
       
     }
   }
@@ -34,9 +60,9 @@ struct riveTest: View {
   
 }
 
-
-struct riveTest_Previews: PreviewProvider {
-    static var previews: some View {
-      riveTest()
-    }
-}
+//
+//struct MyApp_v1App_Previews: PreviewProvider {
+//  static var previews: some View {
+//    MyApp_v1App()
+//  }
+//}

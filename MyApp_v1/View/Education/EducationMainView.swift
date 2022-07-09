@@ -60,10 +60,11 @@ struct EducationMainView: View {
                               editEnable: $editEnable,
                               handler: { animate.toggle() },
                               delateThisItem: { modelView.delete(modelView.educations[index]) })
+            .padding(.horizontal)
           }
           
         }
-      }      
+      }
    
       .animation(.default, value: animate)
       .animation(.default, value: editEnable)

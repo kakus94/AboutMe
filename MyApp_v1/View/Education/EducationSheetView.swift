@@ -70,8 +70,7 @@ struct EditingView: View {
         .padding(.horizontal)
         .padding(.vertical, 5)
         .background(Color.white.shadow(radius: 21))
-        .cornerRadius(10)
-        
+        .cornerRadius(10)        
     }
   }
 }
