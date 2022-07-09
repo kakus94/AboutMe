@@ -18,6 +18,7 @@
 		194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2328438552003C47DE /* MyProjectMainView.swift */; };
 		194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE252843856B003C47DE /* HobbyMainView.swift */; };
 		194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */; };
+		197B29122879AC6A00741EBC /* ModalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B29112879AC6A00741EBC /* ModalInfoView.swift */; };
 		19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A4995C286A45CE0027D4E8 /* TileEducationView.swift */; };
 		19C4D5292875D91B00117301 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19C4D5282875D91B00117301 /* GoogleService-Info.plist */; };
 		19C4D52C2875DAD600117301 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 19C4D52B2875DAD600117301 /* FirebaseAnalytics */; };
@@ -70,6 +71,7 @@
 		194AEE2328438552003C47DE /* MyProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectMainView.swift; sourceTree = "<group>"; };
 		194AEE252843856B003C47DE /* HobbyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyMainView.swift; sourceTree = "<group>"; };
 		194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVisitedMainView.swift; sourceTree = "<group>"; };
+		197B29112879AC6A00741EBC /* ModalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInfoView.swift; sourceTree = "<group>"; };
 		19A4995C286A45CE0027D4E8 /* TileEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileEducationView.swift; sourceTree = "<group>"; };
 		19C4D5282875D91B00117301 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19C4D5322875DC8200117301 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		191CB0FE283E8D4C00D6A188 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19DB35B9284E938900236177 /* PersonModel.swift */,
 				19310DC528772A8A00912B37 /* Model.swift */,
 				19310DC728772B3600912B37 /* AppManager.swift */,
 			);
@@ -152,9 +155,9 @@
 		191CB100283E8D5A00D6A188 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				197B29102879AC5900741EBC /* Modal */,
 				19C4D5312875DC7100117301 /* Auth */,
 				19DF540D2858F1C40031517D /* OtherView */,
-				19DB35B8284E937400236177 /* Model */,
 				194AEE17284383BE003C47DE /* AboutMe */,
 				194AEE18284383CC003C47DE /* Education */,
 				194AEE19284383D6003C47DE /* Career */,
@@ -219,6 +222,14 @@
 			path = PlacesVisited;
 			sourceTree = "<group>";
 		};
+		197B29102879AC5900741EBC /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				197B29112879AC6A00741EBC /* ModalInfoView.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		19C4D5312875DC7100117301 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,14 +238,6 @@
 				19310DCB287730D500912B37 /* FirebaseHelper.swift */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		19DB35B8284E937400236177 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				19DB35B9284E938900236177 /* PersonModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		19DF540D2858F1C40031517D /* OtherView */ = {
@@ -465,6 +468,7 @@
 				191CB102283E8ECA00D6A188 /* SwitchView.swift in Sources */,
 				194AEE202843845C003C47DE /* EducationMainView.swift in Sources */,
 				19310DCA28772C0100912B37 /* RegisterView.swift in Sources */,
+				197B29122879AC6A00741EBC /* ModalInfoView.swift in Sources */,
 				19F0304B2872FB8600CC2A0C /* EducationSheetView.swift in Sources */,
 				19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */,
 				19EC74B1282AC1C300E18E46 /* MyApp_v1App.swift in Sources */,

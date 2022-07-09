@@ -24,23 +24,26 @@ struct MyApp_v1App: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   
   @StateObject var appManager: AppManager = AppManager()
+  @StateObject var modelInfo: ModalInfoViewModel = ModalInfoViewModel()
   
   var body: some Scene {
     WindowGroup {
       
-//      NavigationStack {
+      //      NavigationStack {
       if appManager.isLogin == false {
-         LoginView()
-            .environmentObject(appManager)
-        } else {
-          ContentView()
-            .environmentObject(appManager)
-        }
-        
-//      }
+        LoginView()
+          .modalInfo($modelInfo.isActive)
+          .environmentObject(modelInfo)
+          .environmentObject(appManager)
+      } else {
+        ContentView()
+          .environmentObject(appManager)
+      }
+      
+      //      }
       
       
-     
+      
       
     }
   }

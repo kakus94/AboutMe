@@ -46,6 +46,7 @@ class LoginViewModel: ObservableObject {
 struct LoginView: View {
   
   @EnvironmentObject var appManager: AppManager
+  @EnvironmentObject var modalInfo: ModalInfoViewModel
   
   @StateObject var loginVM: LoginViewModel = LoginViewModel()
   
@@ -66,6 +67,11 @@ struct LoginView: View {
           ButtonLogin
           ButtonRegister
           ButtonForgot
+          
+          Button(action: { modalInfo.isActive = true}) {
+            Text("Test").foregroundColor(.red)
+          }
+          
         }
         .padding()
         
@@ -119,5 +125,6 @@ struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
     LoginView()
       .environmentObject(AppManager())
+      .environmentObject(ModalInfoViewModel())
   }
 }
