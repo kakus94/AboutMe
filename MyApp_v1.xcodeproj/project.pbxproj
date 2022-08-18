@@ -12,13 +12,21 @@
 		19310DC828772B3600912B37 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19310DC728772B3600912B37 /* AppManager.swift */; };
 		19310DCA28772C0100912B37 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19310DC928772C0100912B37 /* RegisterView.swift */; };
 		19310DCC287730D500912B37 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19310DCB287730D500912B37 /* FirebaseHelper.swift */; };
+		1941C15328A92DA200D54CE9 /* CareerMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1941C15228A92DA200D54CE9 /* CareerMainViewModel.swift */; };
+		1941C15528A930B700D54CE9 /* TileCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1941C15428A930B700D54CE9 /* TileCareerView.swift */; };
+		1941C15728A9495900D54CE9 /* CareerDetailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1941C15628A9495900D54CE9 /* CareerDetailSheetView.swift */; };
 		194AEE1E28438443003C47DE /* AboutMeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE1D28438443003C47DE /* AboutMeMainView.swift */; };
 		194AEE202843845C003C47DE /* EducationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE1F2843845C003C47DE /* EducationMainView.swift */; };
 		194AEE222843853C003C47DE /* CareerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE212843853C003C47DE /* CareerMainView.swift */; };
 		194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2328438552003C47DE /* MyProjectMainView.swift */; };
 		194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE252843856B003C47DE /* HobbyMainView.swift */; };
 		194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */; };
+		1965CC2228AE453B00A636CB /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965CC2128AE453B00A636CB /* CourseView.swift */; };
+		1965CC2528AE463500A636CB /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965CC2428AE463500A636CB /* ProjectView.swift */; };
 		197B29122879AC6A00741EBC /* ModalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B29112879AC6A00741EBC /* ModalInfoView.swift */; };
+		197B29142879BEA300741EBC /* WaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B29132879BEA300741EBC /* WaitView.swift */; };
+		197B2917287B75FE00741EBC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 197B2916287B75FE00741EBC /* SQLite */; };
+		197B291A287B764A00741EBC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197B2919287B764A00741EBC /* DatabaseManager.swift */; };
 		19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A4995C286A45CE0027D4E8 /* TileEducationView.swift */; };
 		19C4D5292875D91B00117301 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19C4D5282875D91B00117301 /* GoogleService-Info.plist */; };
 		19C4D52C2875DAD600117301 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 19C4D52B2875DAD600117301 /* FirebaseAnalytics */; };
@@ -65,13 +73,20 @@
 		19310DC728772B3600912B37 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		19310DC928772C0100912B37 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		19310DCB287730D500912B37 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		1941C15228A92DA200D54CE9 /* CareerMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMainViewModel.swift; sourceTree = "<group>"; };
+		1941C15428A930B700D54CE9 /* TileCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCareerView.swift; sourceTree = "<group>"; };
+		1941C15628A9495900D54CE9 /* CareerDetailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerDetailSheetView.swift; sourceTree = "<group>"; };
 		194AEE1D28438443003C47DE /* AboutMeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeMainView.swift; sourceTree = "<group>"; };
 		194AEE1F2843845C003C47DE /* EducationMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationMainView.swift; sourceTree = "<group>"; };
 		194AEE212843853C003C47DE /* CareerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerMainView.swift; sourceTree = "<group>"; };
 		194AEE2328438552003C47DE /* MyProjectMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectMainView.swift; sourceTree = "<group>"; };
 		194AEE252843856B003C47DE /* HobbyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyMainView.swift; sourceTree = "<group>"; };
 		194AEE2728438593003C47DE /* PlacesVisitedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVisitedMainView.swift; sourceTree = "<group>"; };
+		1965CC2128AE453B00A636CB /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		1965CC2428AE463500A636CB /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		197B29112879AC6A00741EBC /* ModalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInfoView.swift; sourceTree = "<group>"; };
+		197B29132879BEA300741EBC /* WaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitView.swift; sourceTree = "<group>"; };
+		197B2919287B764A00741EBC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		19A4995C286A45CE0027D4E8 /* TileEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileEducationView.swift; sourceTree = "<group>"; };
 		19C4D5282875D91B00117301 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19C4D5322875DC8200117301 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -102,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197B2917287B75FE00741EBC /* SQLite in Frameworks */,
 				19C4D52C2875DAD600117301 /* FirebaseAnalytics in Frameworks */,
 				19C4D52E2875DAD600117301 /* FirebaseAuth in Frameworks */,
 				19C4D5302875DAD600117301 /* FirebaseFirestore in Frameworks */,
@@ -194,6 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				194AEE212843853C003C47DE /* CareerMainView.swift */,
+				1941C15228A92DA200D54CE9 /* CareerMainViewModel.swift */,
+				1941C15428A930B700D54CE9 /* TileCareerView.swift */,
+				1965CC2328AE461B00A636CB /* Detail */,
 			);
 			path = Career;
 			sourceTree = "<group>";
@@ -222,12 +241,31 @@
 			path = PlacesVisited;
 			sourceTree = "<group>";
 		};
+		1965CC2328AE461B00A636CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1941C15628A9495900D54CE9 /* CareerDetailSheetView.swift */,
+				1965CC2128AE453B00A636CB /* CourseView.swift */,
+				1965CC2428AE463500A636CB /* ProjectView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		197B29102879AC5900741EBC /* Modal */ = {
 			isa = PBXGroup;
 			children = (
 				197B29112879AC6A00741EBC /* ModalInfoView.swift */,
+				197B29132879BEA300741EBC /* WaitView.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		197B2918287B760900741EBC /* LocalDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				197B2919287B764A00741EBC /* DatabaseManager.swift */,
+			);
+			path = LocalDatabase;
 			sourceTree = "<group>";
 		};
 		19C4D5312875DC7100117301 /* Auth */ = {
@@ -286,6 +324,7 @@
 				191CB0FF283E8D5100D6A188 /* ViewModel */,
 				191CB0FE283E8D4C00D6A188 /* Model */,
 				19EC74B4282AC1C400E18E46 /* Assets.xcassets */,
+				197B2918287B760900741EBC /* LocalDatabase */,
 				19DF5410285904160031517D /* RiveAssets */,
 				19EC74B6282AC1C400E18E46 /* Preview Content */,
 				19DB35B6284E842600236177 /* ExtensionApp.swift */,
@@ -338,6 +377,7 @@
 				19C4D52B2875DAD600117301 /* FirebaseAnalytics */,
 				19C4D52D2875DAD600117301 /* FirebaseAuth */,
 				19C4D52F2875DAD600117301 /* FirebaseFirestore */,
+				197B2916287B75FE00741EBC /* SQLite */,
 			);
 			productName = MyApp_v1;
 			productReference = 19EC74AD282AC1C300E18E46 /* MyApp_v1.app */;
@@ -414,6 +454,7 @@
 			packageReferences = (
 				19DB35B3284E7A3000236177 /* XCRemoteSwiftPackageReference "rive-ios" */,
 				19C4D52A2875DAD600117301 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				197B2915287B75FE00741EBC /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 19EC74AE282AC1C300E18E46 /* Products */;
 			projectDirPath = "";
@@ -460,8 +501,11 @@
 			files = (
 				194AEE2428438552003C47DE /* MyProjectMainView.swift in Sources */,
 				19A4995D286A45CE0027D4E8 /* TileEducationView.swift in Sources */,
+				1941C15528A930B700D54CE9 /* TileCareerView.swift in Sources */,
+				197B291A287B764A00741EBC /* DatabaseManager.swift in Sources */,
 				194AEE222843853C003C47DE /* CareerMainView.swift in Sources */,
 				19EC74DF282C3AEF00E18E46 /* MenuView.swift in Sources */,
+				1941C15328A92DA200D54CE9 /* CareerMainViewModel.swift in Sources */,
 				19EC74B3282AC1C300E18E46 /* ContentView.swift in Sources */,
 				19DB35B7284E842600236177 /* ExtensionApp.swift in Sources */,
 				19310DC828772B3600912B37 /* AppManager.swift in Sources */,
@@ -471,10 +515,14 @@
 				197B29122879AC6A00741EBC /* ModalInfoView.swift in Sources */,
 				19F0304B2872FB8600CC2A0C /* EducationSheetView.swift in Sources */,
 				19DF540F2858F2820031517D /* CardBackgroundView.swift in Sources */,
+				1965CC2528AE463500A636CB /* ProjectView.swift in Sources */,
 				19EC74B1282AC1C300E18E46 /* MyApp_v1App.swift in Sources */,
+				1965CC2228AE453B00A636CB /* CourseView.swift in Sources */,
 				194AEE1E28438443003C47DE /* AboutMeMainView.swift in Sources */,
 				19EC74DB282AC20000E18E46 /* MenuBackGroundView.swift in Sources */,
+				1941C15728A9495900D54CE9 /* CareerDetailSheetView.swift in Sources */,
 				19310DCC287730D500912B37 /* FirebaseHelper.swift in Sources */,
+				197B29142879BEA300741EBC /* WaitView.swift in Sources */,
 				194AEE2828438593003C47DE /* PlacesVisitedMainView.swift in Sources */,
 				19DB35BA284E938900236177 /* PersonModel.swift in Sources */,
 				194AEE262843856B003C47DE /* HobbyMainView.swift in Sources */,
@@ -812,6 +860,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		197B2915287B75FE00741EBC /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		19C4D52A2875DAD600117301 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -831,6 +887,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		197B2916287B75FE00741EBC /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 197B2915287B75FE00741EBC /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		19C4D52B2875DAD600117301 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 19C4D52A2875DAD600117301 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

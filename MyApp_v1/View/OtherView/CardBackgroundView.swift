@@ -23,3 +23,22 @@ extension View {
     
   }
 }
+
+
+extension Button {
+  func RectangleStyle(color: Color, width: CGFloat = UIScreen.main.bounds.width * 0.5, height: CGFloat = 50) -> some View {
+    self
+      .frame(width:  width, height: height )
+      .FormStyle(color)
+  }
+}
+
+extension View {
+  @ViewBuilder func applyTextColor(_ color: Color) -> some View {
+    if UITraitCollection.current.userInterfaceStyle == .light {
+      self.colorInvert().colorMultiply(color)
+    } else {
+      self.colorMultiply(color)
+    }
+  }
+}

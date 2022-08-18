@@ -20,6 +20,7 @@ class ModalInfoViewModel: ObservableObject {
   
   @Published var type: TypeButton = .one
   
+  @MainActor
   func clear() {
     self.message = ""
     self.head = ""
@@ -33,6 +34,18 @@ class ModalInfoViewModel: ObservableObject {
     var text: String = ""
     var handler: () -> Void = { print("not implemented yet") }
     var color: Color = .black
+  }
+  
+  
+  //func
+  @MainActor
+  func showModalError(head: String, message: String, buttonText: String){
+    self.clear()
+    self.head = head
+    self.message = message
+    self.leftButton.text = buttonText
+    self.leftButton.handler = { self.isActive = false  }
+    self.isActive = true
   }
   
 }

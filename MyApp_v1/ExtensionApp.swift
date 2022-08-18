@@ -13,3 +13,11 @@ extension View {
       .shadow(color: .white, radius: 1, x: 1, y: 1)
   }
 }
+
+extension Date {
+  func getMonthAndYear(_ style: DateFormatter.Style = .short) -> String {
+    let format = DateFormatter()
+    format.dateStyle = style    
+    return format.string(from: self)
+  }
+}

@@ -13,6 +13,8 @@ struct MenuContentView: View {
   @Binding var selectedTab: Tab
   @Binding var triger: Bool
   
+  @EnvironmentObject var appManager: AppManager
+  
   var color: Color = .white
   
   var body: some View {
@@ -87,6 +89,12 @@ struct MenuContentView: View {
 
         Button(action: { changeView(tab: .placesvisited) }) {
           Cell(text: "Places visited", imageString: "map")
+        }
+        .offset(x: triger ? 0 : -200)
+        .animation(.default.delay(0.7), value: triger)
+        
+        Button(action: { appManager.LogOut() }) {
+          Cell(text: "Log out", imageString: "arrowshape.left")
         }
         .offset(x: triger ? 0 : -200)
         .animation(.default.delay(0.7), value: triger)

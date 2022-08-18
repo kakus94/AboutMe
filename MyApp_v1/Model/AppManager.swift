@@ -16,4 +16,8 @@ class AppManager: ObservableObject {
   @Published var isLogin: Bool = false
   
   
+  func LogOut() {
+    isLogin = false
+  }
+  
 }

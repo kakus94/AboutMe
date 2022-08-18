@@ -25,26 +25,25 @@ struct MyApp_v1App: App {
   
   @StateObject var appManager: AppManager = AppManager()
   @StateObject var modelInfo: ModalInfoViewModel = ModalInfoViewModel()
+  @StateObject var waitModel: waitViewModel = waitViewModel()
   
   var body: some Scene {
     WindowGroup {
       
-      //      NavigationStack {
-      if appManager.isLogin == false {
-        LoginView()
-          .modalInfo($modelInfo.isActive)
-          .environmentObject(modelInfo)
-          .environmentObject(appManager)
-      } else {
-        ContentView()
-          .environmentObject(appManager)
+      VStack{
+        if appManager.isLogin == false {
+          LoginView()
+          
+        } else {
+          ContentView()
+        }
       }
-      
-      //      }
-      
-      
-      
-      
+      .modalInfo($modelInfo.isActive)
+      .WaitView($waitModel.isActive)
+      .environmentObject(modelInfo)
+      .environmentObject(appManager)
+      .environmentObject(waitModel)
+
     }
   }
 }

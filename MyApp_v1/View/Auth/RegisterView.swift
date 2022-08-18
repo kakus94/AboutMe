@@ -15,11 +15,17 @@ class RegisterViewModel: ObservableObject {
   @Published var lastName: String = ""
   @Published var work: String = ""
   
+  //object reference
+  var infoModel: ModalInfoViewModel!
+  var waitModel: waitViewModel!
   
   
   func send() {
     Task{
-     await FirebaseHelper.Register(userModel: User(email: self.email,
+      
+     await waitModel.show()
+      
+     let sucess = await FirebaseHelper.Register(userModel: User(email: self.email,
                                               uid: "",
                                               name: self.name,
                                               lastName: self.lastName,
@@ -27,6 +33,16 @@ class RegisterViewModel: ObservableObject {
                                               photo: "smile.jpg"),
                               email: self.email,
                               pass: self.pass)
+      if sucess == false {
+        DispatchQueue.main.async {
+          self.infoModel.showModalError(head: "Rejestracja",
+                                   message: "Rejestracja nie powiodla sie cos poszlo nie tak",
+                                   buttonText: "Ups")
+        }
+     
+      }
+      
+      await waitModel.hidden()
     }
 
   }
@@ -44,7 +60,11 @@ class RegisterViewModel: ObservableObject {
 
 struct RegisterView: View {
   
+  @EnvironmentObject var modalInfo: ModalInfoViewModel
+  @EnvironmentObject var waitModel: waitViewModel
+  
   @StateObject var registerVM: RegisterViewModel = RegisterViewModel()
+  
   
     var body: some View {
       ScrollView{
@@ -70,8 +90,12 @@ struct RegisterView: View {
       }
       .padding()
       .frame(maxWidth: .infinity,maxHeight: .infinity)
+      .accentColor(.white)
       .AppBackground()
-      
+      .onAppear{
+        registerVM.waitModel = waitModel
+        registerVM.infoModel = modalInfo
+      }
     }
   
   //Layout

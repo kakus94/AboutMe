@@ -16,7 +16,9 @@ class LoginViewModel: ObservableObject {
   @Published var password: String = "!QAZxsw2"
   @Published var isLogin: Bool = false
   
-  @Published var  appManager: AppManager!
+  var appManager: AppManager!
+  var modalInfo: ModalInfoViewModel!
+  var waitModel: waitViewModel!
   
   func setStatusLogin(_ result: Bool) {
     
@@ -30,15 +32,38 @@ class LoginViewModel: ObservableObject {
   func loginProcess() {
     Task{
       
+      await waitModel.show()
+      
+      
+      
       let (result, user) = await FirebaseHelper.Login(login, password)
       
       appManager.user = user
       
+      //show modal when SignIn malfunction
+      if result == false {
+        DispatchQueue.main.async { [self] in
+          showModalError()
+        }
+      }
+      
       DispatchQueue.main.async { [self] in
         setStatusLogin(result)
       }
+      
+      await waitModel.hidden()
     }
     
+  }
+  
+  @MainActor
+  func showModalError(){
+    modalInfo.clear()
+    modalInfo.head = "Logowanie"
+    modalInfo.message = "logowanie sie nie powiodlo bledy email lub haslo"
+    modalInfo.leftButton.text = "Ok"
+    modalInfo.leftButton.handler = { self.modalInfo.isActive = false  }
+    modalInfo.isActive = true
   }
   
 }
@@ -47,6 +72,7 @@ struct LoginView: View {
   
   @EnvironmentObject var appManager: AppManager
   @EnvironmentObject var modalInfo: ModalInfoViewModel
+  @EnvironmentObject var waitModel: waitViewModel
   
   @StateObject var loginVM: LoginViewModel = LoginViewModel()
   
@@ -85,6 +111,8 @@ struct LoginView: View {
     
     .onAppear {
       loginVM.appManager = appManager
+      loginVM.modalInfo = modalInfo
+      loginVM.waitModel = waitModel
     }
     
   }
@@ -126,5 +154,6 @@ struct LoginView_Previews: PreviewProvider {
     LoginView()
       .environmentObject(AppManager())
       .environmentObject(ModalInfoViewModel())
+      .environmentObject(waitViewModel())
   }
 }

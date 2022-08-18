@@ -194,12 +194,10 @@ extension Text {
 
 
 extension View {
-  func FormStyle() -> some View {
+  func FormStyle(_ color: Color = .white.opacity(0.3)) -> some View {
     self
-//      .padding()
-      .background(.white.opacity(0.3))
+      .background(color)
       .cornerRadius(10)
-//      .padding()
       .shadow(radius: 15,x: 5,y:5)
      
   }

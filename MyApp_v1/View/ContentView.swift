@@ -22,7 +22,7 @@ struct ContentView: View {
 
   
     var body: some View {
-      NavigationView {
+      NavigationStack {
         ZStack{
           
           MenuView(selectedTab: $selectedTab, triger: $triger)
@@ -73,6 +73,7 @@ struct ContentView: View {
         .ignoresSafeArea(.all, edges: .all)
       }
       .animation(.default, value: triger)
+      .accentColor(.white)
     }
 }
 
@@ -85,7 +86,7 @@ struct ContentView_Previews: PreviewProvider {
 
 extension View {
   func AppBackground() -> some View {
-    self.background(Color.blue.gradient)    
+    self.background(Color.blue.gradient)
   }
 }
 

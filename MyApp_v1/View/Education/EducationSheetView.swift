@@ -66,11 +66,19 @@ struct EditingView: View {
   var body: some View {
     VStack(spacing: 3){
       Text("\(self.placeholder):").frame(maxWidth: .infinity, alignment: .leading).bold()
-      TextField(placeholder, text: $text)
-        .padding(.horizontal)
-        .padding(.vertical, 5)
-        .background(Color.white.shadow(radius: 21))
-        .cornerRadius(10)        
+      TextField(placeholder, text: $text, axis: .vertical)
+        .whiteStyle()
     }
+  }
+}
+
+
+extension TextField {
+  func whiteStyle() -> some View {
+    self
+      .padding(.horizontal)
+      .padding(.vertical, 5)
+      .background(Color.white.shadow(radius: 21))
+      .cornerRadius(10)
   }
 }

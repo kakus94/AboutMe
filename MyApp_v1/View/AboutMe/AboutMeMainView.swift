@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-class AboutMeMainViewModel:ObservableObject{
+class AboutMeMainViewModel: ObservableObject{
   
   @Published var personModel: PersonModel?
+  @Published var user: User?
   
   
   func calcAge() -> Int {
