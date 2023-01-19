@@ -28,6 +28,7 @@ struct TileEducationView: View {
     HStack(spacing: 0){
       TreeAndYearView
         .frame(height: UIScreen.main.bounds.height / 7)
+        .padding(.trailing)
       
       TileSubView
         .FormStyle()
@@ -35,7 +36,7 @@ struct TileEducationView: View {
     .animation(.default, value: trigger)
     .animation(.default, value: editEnable)
     .sheet(isPresented: $editButtonTap) {
-      EducationSheetView(model: $model)
+      EducationSheetView(model: model)
     }
     .confirmationDialog("Cos", isPresented: $deleteButtonTap, titleVisibility: Visibility.automatic) {
       Button("Usuń", role: .destructive) {
@@ -55,6 +56,7 @@ struct TileEducationView: View {
           Image(systemName: "person")
             .resizable()
             .scaledToFit()
+            .frame(height: 40)
             .foregroundColor(.black)
           
           VStack{
@@ -132,7 +134,7 @@ struct TileEducationView: View {
 }
 
 
-struct TileEducationDetails {
+struct TileEducationDetails: Codable {
   var specialization: String = ""
   var extraClasses: String = ""
   var project: String = ""

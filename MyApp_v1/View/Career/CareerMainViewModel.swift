@@ -8,7 +8,12 @@
 import Foundation
 
 class CareerMainViewModel: ObservableObject {
+  
+  //application manager reference
+  var appManager: AppManager?
+  
   @Published var careers: [Career] = [Career]()
+
   
   func Save(_ new: Career) {
     careers.removeAll{ $0.id == new.id }
@@ -21,6 +26,30 @@ class CareerMainViewModel: ObservableObject {
   
   func Delete(_ deleteItem: Career) {
     careers.removeAll{ $0.id == deleteItem.id }
+  }
+  
+  func refresh() {
+    //check appManager
+    guard let appManager else { return }
+    //check user
+    guard let user = appManager.user else { return }
+    
+    Task {
+      do {
+        let careers = try await FirebaseHelper.getDocument(datatype: CareerArray.self,
+                                                           colection: "Career",
+                                                           document: user.uid)
+        
+        DispatchQueue.main.async {
+          self.careers = careers.array
+        }
+        
+      } catch {
+        print(error)
+      }
+    }
+            
+            
   }
   
 }

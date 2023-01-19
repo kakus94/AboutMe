@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
+import zlib
 
-
-struct User {
+struct User: Codable {
   var id: String = UUID().uuidString
   var email: String
   var uid: String
@@ -16,14 +17,24 @@ struct User {
   var lastName: String
   var work: String
   var photo: String
+  
+  mutating func setuid(_ value: String){
+    self.uid = value
+  }
 }
 
 struct AboutMe {
   var text: String
 }
 
+struct EducationArray: Codable {
+  @DocumentID var id = UUID().uuidString
+  var lastUpdate: Date = .init()
+  var checksum: String = ""
+  var array: [Education]
+}
 
-struct Education: Identifiable {
+struct Education: Identifiable, Codable {
   var id = UUID().uuidString
   var nameSchool: String
   var location: String
@@ -32,7 +43,14 @@ struct Education: Identifiable {
   var details: TileEducationDetails
 }
 
-struct Career: Identifiable {
+struct CareerArray: Codable {
+  @DocumentID var id = UUID().uuidString
+  var lastUpdate: Date = .init()
+  var checksum: String = ""
+  var array: [Career]
+}
+
+struct Career: Identifiable, Codable {
   var id: String = UUID().uuidString
   var nameCompany: String
   var startDate: Date
@@ -56,7 +74,7 @@ struct PlaceVisited {
   
 }
 
-struct Project {
+struct Project: Codable {
   var id = UUID().uuidString
   var nameProject: String
   var StartDate: Date
@@ -64,11 +82,12 @@ struct Project {
   var now: Bool
 }
 
-struct Training {
+struct Training: Codable {
   var id = UUID().uuidString
   var date: Date
   var nameTraing: String
 }
+
 
 
 extension User {
@@ -77,15 +96,11 @@ extension User {
   }
 }
 
-
-
 extension AboutMe {
   static func Mock() -> AboutMe {
     AboutMe(text: "Text text text text text text text text text text")
   }
 }
-
-
 
 extension Education {
   static func Mock() -> Self {
@@ -106,7 +121,6 @@ extension Education {
                                             project: ""))
   }
 }
-
 
 extension Career {
   
@@ -155,3 +169,6 @@ extension Career {
     Career(nameCompany: "", startDate: Date.now, endDate: Date.now, position: "", obligatory: "", training: [], project: [], description: "")
   }
 }
+
+
+

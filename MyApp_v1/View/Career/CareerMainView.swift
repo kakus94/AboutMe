@@ -10,6 +10,7 @@ import SwiftUI
 struct CareerMainView: View {
   
   @StateObject var model: CareerMainViewModel = CareerMainViewModel.Mock()
+  @EnvironmentObject var appManager: AppManager
   
     var body: some View {
       ScrollView {
@@ -42,11 +43,16 @@ struct CareerMainView: View {
 
         }
       }
+      .onAppear {
+        model.appManager = appManager
+        model.refresh()
+      }
     }
 }
 
 struct CareerMainView_Previews: PreviewProvider {
     static var previews: some View {
         CareerMainView()
+        .environmentObject(AppManager())
     }
 }

@@ -25,7 +25,7 @@ class RegisterViewModel: ObservableObject {
       
      await waitModel.show()
       
-     let sucess = await FirebaseHelper.Register(userModel: User(email: self.email,
+     let sucess = try? await FirebaseHelper.Register(userModel: User(email: self.email,
                                               uid: "",
                                               name: self.name,
                                               lastName: self.lastName,

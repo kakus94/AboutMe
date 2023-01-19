@@ -8,8 +8,10 @@
 import SwiftUI
 
 class EducationMainViewModel: ObservableObject {
-  @Published var educations: [Education] = .init()
   
+  var appManager: AppManager?
+  
+  @Published var educations: [Education] = .init()
   
   func delete(_ id: String){
     educations.removeAll { item in
@@ -21,6 +23,30 @@ class EducationMainViewModel: ObservableObject {
     educations.removeAll { item in
       item.id == object.id
     }
+  }
+  
+  func refresh() {
+    //check appManager is referance
+    guard let appManager else { return }
+    //check user
+    guard let user = appManager.user else { return }
+    
+    Task {
+      do {
+      let result = try await FirebaseHelper.getDocument(datatype: EducationArray.self,
+                                   colection: "Education",
+                                   document: user.uid)
+        DispatchQueue.main.async {
+          self.educations = result.array
+        }
+      }
+      catch {
+        print(error.localizedDescription)
+      }
+     
+      
+    }
+    
   }
   
   static func Mock(_ count: Int) -> EducationMainViewModel {
@@ -41,6 +67,7 @@ class EducationMainViewModel: ObservableObject {
 struct EducationMainView: View {
   
   @StateObject var modelView: EducationMainViewModel
+  @EnvironmentObject var appManager: AppManager
   
   @State  var animate:    Bool = false
   @State var editEnable:  Bool = false
@@ -84,7 +111,10 @@ struct EducationMainView: View {
         }
       })
       .AppBackground()
-        
+      .onAppear {
+        modelView.appManager = appManager
+        modelView.refresh()
+      }
     }
   
   
@@ -111,5 +141,6 @@ struct EducationMainView: View {
 struct EducationMainView_Previews: PreviewProvider {
     static var previews: some View {
       EducationMainView(modelView: EducationMainViewModel.Mock(5))
+        .environmentObject(AppManager())
     }
 }

@@ -28,7 +28,7 @@ extension View {
 extension Button {
   func RectangleStyle(color: Color, width: CGFloat = UIScreen.main.bounds.width * 0.5, height: CGFloat = 50) -> some View {
     self
-      .frame(width:  width, height: height )
+      .frame(width:  width, height: height, alignment: .center )
       .FormStyle(color)
   }
 }

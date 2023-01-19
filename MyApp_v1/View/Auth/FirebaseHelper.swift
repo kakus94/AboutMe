@@ -13,9 +13,46 @@ import FirebaseAuth
 
 class FirebaseHelper {
   
+  static func setData<T: Codable>(colection: String, document: String, data: T) throws {
+    
+    let db = Firestore.firestore()
+    
+    let decRef = db.collection(colection).document(document)
+    do {
+      try decRef.setData(from: data)
+    } catch {
+      print(error)
+    }
+    
+  }
   
+  static func deleteData(collection: String, document: String) throws {
+    
+    let db = Firestore.firestore()
+    
+    let docRef = db.collection(collection).document(document)
+    
+    Task {
+      do {
+        try await docRef.delete()
+      } catch {
+        print(error)
+        throw FirebaseError.deleteDocumentError
+      }
+    }   
+  }
   
-  static func Register(userModel: User, email: String, pass: String) async -> (Bool) {
+  static func getDocument<T:Codable>(datatype: T.Type, colection: String, document: String ) async throws -> T {
+    
+    let db = Firestore.firestore()
+    let refCol = db.collection(colection)
+    
+    let result = try await refCol.document(document).getDocument(as: T.self)
+    
+    return result
+  }
+  
+  static func Register(userModel: User, email: String, pass: String) async throws -> (Bool) {
     
     do {
       
@@ -23,17 +60,14 @@ class FirebaseHelper {
       
       let uuid = resultRegister.user.uid
       
-      let db = Firestore.firestore()
-      let refCol = db.collection("User")
+      let user = User(email: userModel.email,
+                      uid: uuid,
+                      name: userModel.name,
+                      lastName: userModel.lastName,
+                      work: userModel.work,
+                      photo: userModel.photo)
       
-      try await refCol.document(uuid).setData(["email" : email,
-                                     "lastName": userModel.lastName,
-                                     "name": userModel.name,
-                                     "uid": uuid,
-                                     "photo": userModel.photo,
-                                     "work": userModel.work])
-      
-      print("Regiter sucess \(uuid)")
+      try self.setData(colection: "User", document: uuid, data: user)
       
       return true
       
@@ -46,7 +80,6 @@ class FirebaseHelper {
     
   }
 
-  
   static func Login(_ email: String, _ pass: String) async -> (result: Bool, user: User?) {
     
     do {
@@ -82,13 +115,7 @@ class FirebaseHelper {
       return (result: false, user: nil)
     }
     
-    
-
-    
   }
-  
-  
-  
   
 }
       
@@ -98,4 +125,12 @@ extension Dictionary where Key == String {
     return self[keyString] as? String ?? ""
   }
   
+}
+
+
+extension FirebaseHelper {
+  enum FirebaseError: Error {
+    case getDocumentError
+    case deleteDocumentError
+  }
 }

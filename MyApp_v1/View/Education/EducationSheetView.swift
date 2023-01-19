@@ -9,12 +9,15 @@ import SwiftUI
 
 struct EducationSheetView: View {
   
-  @Binding var model: Education
+  @State var model: Education
   @State var year: String = "2002"
   
-  init(model: Binding<Education>) {
-    self._model = model
+  @State private var saveingModel: Education?
+  
+  init(model: Education) {
+    self.model = model
     self.year = "\(self.model.startDate)"
+    saveingModel = model
   }
   
   var body: some View {
@@ -41,6 +44,23 @@ struct EducationSheetView: View {
       .navigationBarTitleDisplayMode(.inline)
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .AppBackground()
+      .toolbar {
+        ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+            Button(action: {}) {
+              Text("Cancel")
+                .foregroundColor( .black )
+            }
+            .RectangleStyle(color: .red, width: 80, height: 30)
+          
+        }
+        ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+          Button(action: {}) {
+            Text("Save")
+              .foregroundColor( .black)
+          }
+          .RectangleStyle(color: .green, width: 80, height: 30)
+        }
+      }
       
       .onAppear {
         self.year = "\(self.model.startDate)"
@@ -53,7 +73,7 @@ struct EducationSheetView: View {
 
 struct EducationSheetView_Previews: PreviewProvider {
     static var previews: some View {
-      EducationSheetView(model: .constant(Education.Mock()))
+      EducationSheetView(model: (Education.Mock()))
     }
 }
 
